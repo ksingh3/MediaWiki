@@ -130,3 +130,25 @@ This time it will mount LocalSettings.php file under `/var/www/html/` using conf
     <td><img src="Screenshots/Capture5.JPG"></td>
  </tr>
  </table>
+
+
+## Rolling updates Automation
+To automate rolling update, we can make use of secrets under Settings and making use of following 
+Action: https://github.com/marketplace/actions/helm-3
+``` shell
+name: Deploy
+on:
+  release:
+    types: [created]
+jobs:
+  deployment:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v1
+      - name: Deploy
+        uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: helm upgrade --install mywiki -f values.yaml . -n wm --set upgrade=Yes
+          kubeconfig: '${{ secrets.KUBECONFIG }}'
+```
+secrets.KUBECONFIG is kubeconfig saved inside github secrets.
