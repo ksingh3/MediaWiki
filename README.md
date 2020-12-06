@@ -113,3 +113,20 @@ update the hostname to mywiki-db.wm.svc.cluster.local
     <td><img src="Screenshots/Capture4.JPG"></td>
  </tr>
  </table>
+
+## Update Application helm chart.
+### Download LocalSettings.php
+### Update Values.yaml
+Update config property in File: [Values.yaml](https://github.com/ksingh3/MediaWiki/blob/3dc5d3103759b4c2bd52975859ec31468606ec89/Charts/mywiki/values.yaml#L40-L138) using the downloaded LocalSettings.php.
+
+### Re-run the helm upgrade with upgrade=Yes
+```shell
+helm upgrade --install mywiki -f values.yaml . -n wm --set upgrade=Yes
+```
+This time it will mount LocalSetting.php file under `/var/www/html/` using config map.
+
+<table>
+  <tr>
+    <td><img src="Screenshots/Capture5.JPG"></td>
+ </tr>
+ </table>
