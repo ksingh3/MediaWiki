@@ -90,3 +90,26 @@ $ helm upgrade --install mywiki -f values.yaml . -n wm
  $ export POD_NAME=$(kubectl get pods --namespace wm -l "app.kubernetes.io/name=mywiki,app.kubernetes.io/instance=mywiki" -o jsonpath="{.items[0].metadata.name}")
  $ kubectl --namespace wm port-forward $POD_NAME 8080:80
 ```
+
+## Setup the Application 
+Open the application on [http://localhost:8080](http://localhost:8080)
+<table>
+  <tr>
+    <td><img src="Screenshots/Capture1.JPG"></td>
+ </tr>
+ <tr>
+    <td><img src="Screenshots/Capture2.JPG"></td>
+ </tr>
+ </table>
+
+### Database hostname
+update the hostname to mywiki-db.wm.svc.cluster.local
+
+<table>
+  <tr>
+    <td><img src="Screenshots/Capture3.JPG"></td>
+ </tr>
+ <tr>
+    <td><img src="Screenshots/Capture4.JPG"></td>
+ </tr>
+ </table>
