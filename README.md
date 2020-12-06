@@ -123,7 +123,7 @@ Update config property in File: [Values.yaml](https://github.com/ksingh3/MediaWi
 ```shell
 helm upgrade --install mywiki -f values.yaml . -n wm --set upgrade=Yes
 ```
-This time it will mount LocalSetting.php file under `/var/www/html/` using config map.
+This time it will mount LocalSettings.php file under `/var/www/html/` using config map.
 
 <table>
   <tr>
