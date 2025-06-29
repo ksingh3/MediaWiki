@@ -8,11 +8,32 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
+      Repo:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+        description: 'Repo name'
         # Default value if no value is explicitly provided
-        default: 'World'
+        default: 'TIER1_ACBS'
+        # Input has to be provided for the workflow to run
+        required: true
+      Source:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Source branch '
+        # Default value if no value is explicitly provided
+        default: 'feature/IP-1234-added-users-table'
+        # Input has to be provided for the workflow to run
+        required: true
+      Target:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Target branch '
+        # Default value if no value is explicitly provided
+        default: 'ENV/R1'
+        # Input has to be provided for the workflow to run
+        required: true
+      PRID:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Pull request number '
+        # Default value if no value is explicitly provided
+        default: '1234'
         # Input has to be provided for the workflow to run
         required: true
 
