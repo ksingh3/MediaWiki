@@ -15,5 +15,7 @@ RUN wget https://releases.wikimedia.org/mediawiki/$WIKI_EXACT_VERSION/mediawiki-
     mv mediawiki-$WIKI_VERSION/* /var/www/html/ && \
     rm mediawiki-$WIKI_VERSION.tar.gz
 
+RUN echo "TraceEnable off" >> /etc/httpd/conf/httpd.conf
+    
 CMD /usr/sbin/apachectl -DFOREGROUND
 EXPOSE 80
