@@ -15,8 +15,8 @@ Following are the prerequisite before going forward:
 You can use my docker hub images, else you can create you own image beofre create run docker login.
 
 ### Use my docker images
-- Application image: [ksingh3/mediawiki:deploy](https://hub.docker.com/layers/ksingh3/mediawiki/tags/)
-- Mariadb Image: [ksingh3/mediawiki:db](https://hub.docker.com/layers/ksingh3/mediawiki/tags/)
+- Application image: [ksingh3/mediawiki:deploy](https://hub.docker.com/r/ksingh3/mediawiki)
+- Mariadb Image: [ksingh3/mediawiki:db](https://hub.docker.com/r/ksingh3/mediawiki)
 
 ```shell
 $ docker pull ksingh3/mediawiki:deploy
